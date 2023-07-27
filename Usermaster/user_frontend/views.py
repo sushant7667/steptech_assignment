@@ -9,6 +9,7 @@ from user_backend.models import User
 from django.http import HttpResponse
 
 # Create your views here.
+hellourl='http://127.0.0.1:8000/user_backend/hello'
 addurl='http://127.0.0.1:8000/user_backend/AddUser'
 geturl='http://127.0.0.1:8000/user_backend/GetUser'
 getidurl='http://127.0.0.1:8000/user_backend/GetUserId/'
@@ -16,10 +17,9 @@ updateurl='http://127.0.0.1:8000/user_backend/UpdateUser/'
 deleteurl='http://127.0.0.1:8000/user_backend/deleteuser/'
 
 def hello_world(request):
-    response = requests.get('http://127.0.0.1:8000/user_backend/hello')
-    if response.status_code == 200:
-        data = response.json()
-        return HttpResponse(data['message'])
+        response = requests.get(hellourl)
+        geodata = response.json()
+        return HttpResponse(geodata['message'])
 
 def Adduser_front(request):
     if request.method == 'POST':
