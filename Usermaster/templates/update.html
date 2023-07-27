@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+        {% load static %}
+    <title>Update User</title>
+    <!-- Include the necessary CSS and JavaScript files for Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2LCIWk4FbTrFZb_hItHNuFCfN4jpKtcI&libraries=places"></script>
+
+      <!-- CSS only -->
+    <link rel="stylesheet" href="{% static 'css/add.css' %}" />
+
+    <script>
+    </script>
+    <style>
+        
+    </style>
+
+</head>
+<body class="bodyclass">
+    <div class="content">
+      {% if messages %}
+      <div class="row" style="justify-content: center;">
+        <div class="col-sm-6 col-sm-offset-3">
+          {% for message in messages %}
+          <div style="margin:15px 0px" class="alert alert-{{ message.tags }} alert-dismissible text-center" role="alert">
+            <p style="margin:15px 0px" class="alert alert-{{ message.tags }} alert-dismissible text-center" role="alert">{{ message }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      
+      {% endif %}
+    <form method="POST" action="# " enctype="multipart/form-data">
+        {% csrf_token %}
+        <h1>Update User</h1>
+        <div class="input__box">
+            <label for="Name" class="">Name</label>
+            <input type="text" id="Name" name="name" value="{{data.name}}">
+        </div>
+        <div class="input__box">
+            <label for="Email" class="">Email</label>
+            <input type="text" id="Email" name="email" value="{{data.email}}">
+        </div>
+        <div class="input__box">
+            <label for="Role" class="">Role</label>
+            <input type="text" id="Role" name="role" value="{{data.role}}">
+        </div>
+        <br>
+        <button type="submit">Add User</button>
+
+    </form>
+</body>
+</html>
