@@ -5,7 +5,7 @@ steptech_assignment
 2) I have perform user can add ,update and delete operation.
 3) Firstly I create virtual environment as env then I used this cmd for create the project: django-admin startproject Usermaster
 4) In usermaster setting I have mention this both apps name in install app and give the template ands static file path.
-5) Also i have mention in settings.py databse ENGINE, user and password to coonect the database pgadmin
+5) Also i have mention in settings.py databse ENGINE, user and password to coonect the database pgadmin. In urls.py i have give the both path user_backend urls and      user_frontend urls.
 6) In usermaster i have created app user_backend and user_frontend
     I)user_backend:py manage.py startapp user_backend 
     II)user_frontend:py manage.py startapp user_frontend  
