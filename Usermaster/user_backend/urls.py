@@ -3,8 +3,8 @@ from django.urls import path
 from user_backend import views
 urlpatterns = [
     # Other URL patterns
+    path('hello', views.hello,name="hello"),
     path('AddUser', views.AddUser,name="AddUser"),
-    # path('home', views.home,name="home"),
     path('GetUser', views.GetUser,name="GetUser"),
     path('GetUserId/<int:id>', views.GetUserId,name="GetUserId"),
     path('UpdateUser/<int:id>', views.UpdateUser,name="UpdateUser"),
