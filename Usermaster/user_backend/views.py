@@ -8,6 +8,10 @@ import requests
 from rest_framework.response import Response
 
 # Create your views here.
+@api_view(['GET'])
+def hello(request):
+    return Response({"message": "Hello, World!"})
+    
 @api_view(['POST'])
 def AddUser(request):
     data={}
